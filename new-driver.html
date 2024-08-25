@@ -306,8 +306,70 @@
 
             <div class="page-content">
                 <div class="container-fluid">
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                                <h4 class="mb-sm-0">New Driver</h4>
 
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Driver</a></li>
+                                        <li class="breadcrumb-item active">New Driver</li>
+                                    </ol>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">New Driver Account</h4>
+                                    <div class="flex-shrink-0">
+                                        <button class="btn btn-primary" onclick="window.history.back()"><i class="ri-arrow-go-back-fill"></i> Back</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form action="" method="post">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <div class="form-group">
+                                                        <label for="name">Fullname <span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" id="name" name="fullname" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="email">Email <span class="text-danger">*</span></label>
+                                                                <input type="email" class="form-control" id="email" name="email" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="phone">Phone No <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="phone" name="phonr" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
@@ -347,8 +409,8 @@
 
     <!--start back-to-top-->
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
-        <i class="ri-arrow-up-line"></i>
-    </button>
+            <i class="ri-arrow-up-line"></i>
+        </button>
     <!--end back-to-top-->
 
 
