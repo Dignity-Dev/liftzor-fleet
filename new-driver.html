@@ -330,17 +330,22 @@
                                 <div class="card-header align-items-center d-flex">
                                     <h4 class="card-title mb-0 flex-grow-1">New Driver Account</h4>
                                     <div class="flex-shrink-0">
-                                        <button class="btn btn-primary" onclick="window.history.back()"><i class="ri-arrow-go-back-fill"></i> Back</button>
+                                        <button class="btn btn-primary" onclick="window.history.back()"><i
+                                                class="ri-arrow-go-back-fill"></i> Back</button>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form action="" method="post">
+                                    <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <div class="form-group">
-                                                        <label for="name">Fullname <span class="text-danger">*</span></label>
-                                                        <input type="text" class="form-control" id="name" name="fullname" required>
+                                                <h5>Personal Information</h5>
+                                                <div class="row">
+                                                    <div class="mb-3">
+                                                        <div class="form-group">
+                                                            <label for="name">Fullname <span
+                                                                    class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" id="name" name="fullname" required>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -348,7 +353,8 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="email">Email <span class="text-danger">*</span></label>
+                                                                <label for="email">Email <span
+                                                                        class="text-danger">*</span></label>
                                                                 <input type="email" class="form-control" id="email" name="email" required>
                                                             </div>
                                                         </div>
@@ -356,7 +362,8 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="phone">Phone No <span class="text-danger">*</span></label>
+                                                                <label for="phone">Phone No <span
+                                                                        class="text-danger">*</span></label>
                                                                 <input type="text" class="form-control" id="phone" name="phone" required>
                                                             </div>
                                                         </div>
@@ -366,17 +373,20 @@
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="phone">Address (Residential) <span class="text-danger">*</span></label> <textarea class="form-control" name="address" id="address" rows="5"></textarea>
+                                                                <label for="phone">Address (Residential) <span
+                                                                        class="text-danger">*</span></label> <textarea class="form-control" name="address" id="address" rows="5"></textarea>
 
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <h5>Emergency Contact Information (Name, Relationship, Phone Number)</h5>
+                                                <h5>Emergency Contact Information (Name, Relationship, Phone Number)
+                                                </h5>
                                                 <div class="row">
                                                     <div class="mb-3">
                                                         <div class="form-group">
-                                                            <label for="emergency_fullname">Fullname <span class="text-danger">*</span></label>
+                                                            <label for="emergency_fullname">Fullname <span
+                                                                    class="text-danger">*</span></label>
                                                             <input type="text" class="form-control" id="emergency_fullname" name="emergency_fullname" required>
                                                         </div>
                                                     </div>
@@ -386,7 +396,8 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="relationship">Relationship <span class="text-danger">*</span></label>
+                                                                <label for="relationship">Relationship <span
+                                                                        class="text-danger">*</span></label>
                                                                 <input type="text" class="form-control" id="relationship" name="relationship" required>
                                                             </div>
                                                         </div>
@@ -394,7 +405,8 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="emmergence_phone">Phone No <span class="text-danger">*</span></label>
+                                                                <label for="emmergence_phone">Phone No <span
+                                                                        class="text-danger">*</span></label>
                                                                 <input type="text" class="form-control" id="emmergence_phone" name="emmergence_phone" required>
                                                             </div>
                                                         </div>
@@ -404,6 +416,57 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <h5>Identity Verification:</h5>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="name">Government-Issued ID <span class="text-danger">*</span></label>
+                                                                <select class="form-control" name="kyc_id" id="kyc_id" required>
+                                                                    <option value="">SELECT</option>
+                                                                    <option value="NIN">NIN (National Identification No.)</option>
+                                                                    <option value="PVC">PVC (Voter's Card)</option>
+                                                                    <option value="driver">Driving Licence</option>
+                                                                    <option value="intPassport">International Passport</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="name">ID Number <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="idNumber" name="idNumber" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="name">ID Expiry Date <span class="text-danger">*</span></label>
+                                                                <input type="date" class="form-control" id="idExpire" name="idExpire" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <div class="form-group">
+                                                                    <label for="idDocument">Upload a clear copy of ID <span class="text-danger">*</span></label>
+                                                                    <input type="file" class="form-control" id="idDocument" name="idDocument" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <div class="form-group">
+                                                                    <label for="name">ID Expiry Date <span class="text-danger">*</span></label>
+                                                                    <input type="date" class="form-control" id="idExpire" name="idExpire" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
@@ -450,8 +513,8 @@
 
     <!--start back-to-top-->
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
-            <i class="ri-arrow-up-line"></i>
-        </button>
+        <i class="ri-arrow-up-line"></i>
+    </button>
     <!--end back-to-top-->
 
 
