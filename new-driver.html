@@ -420,13 +420,16 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="name">Government-Issued ID <span class="text-danger">*</span></label>
+                                                                <label for="name">Government-Issued ID <span
+                                                                        class="text-danger">*</span></label>
                                                                 <select class="form-control" name="kyc_id" id="kyc_id" required>
                                                                     <option value="">SELECT</option>
-                                                                    <option value="NIN">NIN (National Identification No.)</option>
+                                                                    <option value="NIN">NIN (National Identification
+                                                                        No.)</option>
                                                                     <option value="PVC">PVC (Voter's Card)</option>
                                                                     <option value="driver">Driving Licence</option>
-                                                                    <option value="intPassport">International Passport</option>
+                                                                    <option value="intPassport">International Passport
+                                                                    </option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -434,7 +437,8 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="name">ID Number <span class="text-danger">*</span></label>
+                                                                <label for="name">ID Number <span
+                                                                        class="text-danger">*</span></label>
                                                                 <input type="text" class="form-control" id="idNumber" name="idNumber" required>
                                                             </div>
                                                         </div>
@@ -442,29 +446,65 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="name">ID Expiry Date <span class="text-danger">*</span></label>
+                                                                <label for="name">ID Expiry Date <span
+                                                                        class="text-danger">*</span></label>
                                                                 <input type="date" class="form-control" id="idExpire" name="idExpire" required>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-
-                                                        <div class="col-md-6">
-                                                            <div class="mb-3">
-                                                                <div class="form-group">
-                                                                    <label for="idDocument">Upload a clear copy of ID <span class="text-danger">*</span></label>
-                                                                    <input type="file" class="form-control" id="idDocument" name="idDocument" required>
-                                                                </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="idDocument">Upload a clear copy of ID
+                                                                    <span class="text-danger">*</span></label>
+                                                                <input type="file" class="form-control" id="idDocument" name="idDocument" required>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <div class="mb-3">
-                                                                <div class="form-group">
-                                                                    <label for="name">ID Expiry Date <span class="text-danger">*</span></label>
-                                                                    <input type="date" class="form-control" id="idExpire" name="idExpire" required>
-                                                                </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="passport">Recent passport (150px by 150px)
+                                                                    <span class="text-danger">*</span></label>
+                                                                <input type="file" class="form-control" id="passport" name="passport" required>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="name">About Me <span class="text-danger">*</span></label>
+                                                                <textarea name="aboutme" id="aboutme" rows="5" class="form-control" placeholder="e.g Consent to Background Check, Criminal Record (if applicable), Reference Contacts (for verification)" required></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h5>Account Information</h5>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="name">Username<span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="username" name="username" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="name">Password <span class="text-danger">*</span></label>
+                                                                <input type="password" class="form-control" id="password" name="password" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 mt-3">
+                                                        <button name="RegisterDriver" class="btn btn-primary btn-block col-12 btn-lg"> Create Driver Account</button>
                                                     </div>
                                                 </div>
                                             </div>
