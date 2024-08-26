@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Manage Account | Liftzor - Fleet</title>
+    <title>Update Vehicle | Liftzor - Fleet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Liftzor Fleet" name="description" />
     <meta content="DDevs" name="author" />
@@ -306,17 +306,16 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                                <h4 class="mb-sm-0">Vehicle category</h4>
+                                <h4 class="mb-sm-0">Update Vehicle</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Vehicle</a></li>
-                                        <li class="breadcrumb-item active">Vehicle category</li>
+                                        <li class="breadcrumb-item active">Update Vehicle</li>
                                     </ol>
                                 </div>
 
@@ -325,84 +324,181 @@
                     </div>
                     <!-- end page title -->
 
-
-
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-12">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Vehicle Category</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">Update Vehicle</h4>
                                     <div class="flex-shrink-0">
                                         <button class="btn btn-primary" onclick="window.history.back()"><i
                                                 class="ri-arrow-go-back-fill"></i> Back</button>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form action="" method="POST" autocomplete="off">
-                                        <div class="mb-3">
-                                            <div class="form-group">
-                                                <label for="vehicle_category">Category Name</label>
-                                                <input type="text" class="form-control" id="vehicle_category" name="vehicle_category" placeholder="e.g., Motorcycle, Van, Truck, Bicycle" required>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="form-group">
-                                                <label for="vehicle_category">Vehicle Features</label>
-                                                <input type="text" class="form-control" id="vehicle_category" name="vehicle_category" placeholder="e.g., refrigeration, GPS tracking, etc.">
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <button class="btn btn-primary btn-block col-12" name="createVehicleCategory">Create New Category</button>
-                                        </div>
+                                    <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5>Vehicle Information</h5>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="vehicleName">Vehicle Name <span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="vehicleName" value="Toyota Hilux" name="vehicleName" placeholder="e.g., Toyota HiAce" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="vehicleName">Category<span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" value="Highlander" id="vehicleCategory" name="vehicleCategory" placeholder="e.g., Van, Truck, Motorcycle" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
 
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="vin">Vehicle Identification Number <span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="vin" value="CVE-423CDR-FR" name="vin" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="color">Color<span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="color" value="Black" name="color" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h5>Registration Details </h5>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="platenumber">License Plate Number <span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="platenumber" value="AAA-1234-AS" name="platenumber" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="regstate">Registration State/Country<span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="regstate" value="Lagos/Nigeria" name="regstate" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="regExpDate">Registration Expiry Date <span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="regExpDate" value="12/2024" name="regExpDate" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="insuranceExpDate">Insurance Expiry Date<span
+                                                                        class="text-danger"></span></label>
+                                                                <input type="text" class="form-control" value="03/2027" id="insuranceExpDate" name="insuranceExpDate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <h5>Capacity and Dimensions </h5>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="sittingCap">Seating Capacity<span
+                                                                        class="text-danger"></span></label>
+                                                                <input type="number" class="form-control" id="sittingCap" value="2" name="sittingCap">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="cargoCap">Cargo Capacity<span
+                                                                        class="text-danger"></span></label>
+                                                                <input type="text" class="form-control" value="700KG" id="cargoCap" name="cargoCap" placeholder="100KG" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5>Owner and Operator Information</h5>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="ownerName">Owner Name
+                                                                    <span class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="ownerName" value="Morowolo Adisa" name="ownerName" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="vehiclePhoto">Photos of the Vehicle
+                                                                    <span class="text-danger">*</span></label>
+                                                                <input type="file" class="form-control" id="vehiclePhoto" name="vehiclePhoto" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="status">Documents
+                                                                    <span class="text-danger">*</span></label>
+                                                                <textarea class="form-control" rows="12" name="vehicleDocs" id="" required placeholder="Upload scanned copies of important documents (e.g., registration papers, insurance certificate)"></textarea>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12 mt-3">
+                                                        <button name="UpdateVehicle" class="btn btn-primary btn-block col-12 btn-lg"> Update
+                                                            Vehicle</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Vehicle Category Management</h4>
-                                    <div class="flex-shrink-0">
-                                        <button class="btn btn-primary" onclick="window.history.back()"><i
-                                                class="ri-arrow-go-back-fill"></i> Back</button>
-                                    </div>
-                                </div>
-                                <div class="card-body table-responsive">
-                                    <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>SN</th>
-                                                <th>Category Code</th>
-                                                <th>Category Name</th>
-                                                <th>Features</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1.</td>
-                                                <td>VCT-001</td>
-                                                <td>VAN</td>
-                                                <td>Short Distance</td>
-                                                <td>
-                                                    <a id="sa-warning" class="text-danger">
-                                                        <i class="ri-delete-bin-fill align-bottom me-2 text-danger"></i> Delete
-                                                    </a>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end col-->
                     </div>
-                    <!--end row-->
-
-
-
 
 
 
@@ -430,10 +526,6 @@
             </footer>
         </div>
         <!-- end main content-->
-
-
-
-
 
 
 

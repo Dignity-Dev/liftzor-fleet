@@ -198,7 +198,7 @@
                                             Manage Vehicle </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="assign-vehicle.html" class="nav-link" data-key="t-assignVehicle">
+                                        <a href="assigned-vehicle.html" class="nav-link" data-key="t-assignVehicle">
                                             Assign Vehicle </a>
                                     </li>
                                 </ul>
@@ -328,7 +328,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">New Vehicle Info</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">New Vehicle</h4>
                                     <div class="flex-shrink-0">
                                         <button class="btn btn-primary" onclick="window.history.back()"><i
                                                 class="ri-arrow-go-back-fill"></i> Back</button>
@@ -338,13 +338,24 @@
                                     <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h5>Personal Information</h5>
+                                                <h5>Vehicle Information</h5>
                                                 <div class="row">
-                                                    <div class="mb-3">
-                                                        <div class="form-group">
-                                                            <label for="name">Fullname <span
-                                                                    class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" id="name" name="fullname" required>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="vehicleName">Vehicle Name <span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="vehicleName" name="vehicleName" placeholder="e.g., Toyota HiAce" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="vehicleName">Category<span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="vehicleCategory" name="vehicleCategory" placeholder="e.g., Van, Truck, Motorcycle" required>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -353,41 +364,41 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="email">Email <span
+                                                                <label for="vin">Vehicle Identification Number <span
                                                                         class="text-danger">*</span></label>
-                                                                <input type="email" class="form-control" id="email" name="email" required>
+                                                                <input type="text" class="form-control" id="vin" name="vin" required>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="phone">Phone No <span
+                                                                <label for="color">Color<span
                                                                         class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="phone" name="phone" required>
+                                                                <input type="text" class="form-control" id="color" name="color" required>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="phone">Address (Residential) <span
-                                                                        class="text-danger">*</span></label> <textarea class="form-control" name="address" id="address" rows="5"></textarea>
 
+                                                <h5>Registration Details </h5>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="platenumber">License Plate Number <span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="platenumber" name="platenumber" required>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <h5>Emergency Contact Information (Name, Relationship, Phone Number)
-                                                </h5>
-                                                <div class="row">
-                                                    <div class="mb-3">
-                                                        <div class="form-group">
-                                                            <label for="emergency_fullname">Fullname <span
-                                                                    class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" id="emergency_fullname" name="emergency_fullname" required>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="regstate">Registration State/Country<span
+                                                                        class="text-danger">*</span></label>
+                                                                <input type="text" class="form-control" id="regstate" name="regstate" required>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -396,119 +407,89 @@
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="relationship">Relationship <span
+                                                                <label for="regExpDate">Registration Expiry Date <span
                                                                         class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="relationship" name="relationship" required>
+                                                                <input type="text" class="form-control" id="regExpDate" name="regExpDate" required>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="emmergence_phone">Phone No <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="emmergence_phone" name="emmergence_phone" required>
+                                                                <label for="insuranceExpDate">Insurance Expiry Date<span
+                                                                        class="text-danger"></span></label>
+                                                                <input type="text" class="form-control" id="insuranceExpDate" name="insuranceExpDate">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
+
+                                                <h5>Capacity and Dimensions </h5>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="sittingCap">Seating Capacity<span
+                                                                        class="text-danger"></span></label>
+                                                                <input type="number" class="form-control" id="sittingCap" name="sittingCap">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <div class="form-group">
+                                                                <label for="cargoCap">Cargo Capacity<span
+                                                                        class="text-danger"></span></label>
+                                                                <input type="text" class="form-control" id="cargoCap" name="cargoCap" placeholder="100KG" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
 
                                             </div>
                                             <div class="col-md-6">
-                                                <h5>Identity Verification:</h5>
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">Government-Issued ID <span
-                                                                        class="text-danger">*</span></label>
-                                                                <select class="form-control" name="kyc_id" id="kyc_id" required>
-                                                                    <option value="">SELECT</option>
-                                                                    <option value="NIN">NIN (National Identification
-                                                                        No.)</option>
-                                                                    <option value="PVC">PVC (Voter's Card)</option>
-                                                                    <option value="driver">Driving Licence</option>
-                                                                    <option value="intPassport">International Passport
-                                                                    </option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">ID Number <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="idNumber" name="idNumber" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">ID Expiry Date <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="date" class="form-control" id="idExpire" name="idExpire" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <h5>Owner and Operator Information</h5>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="idDocument">Upload a clear copy of ID
+                                                                <label for="ownerName">Owner Name
                                                                     <span class="text-danger">*</span></label>
-                                                                <input type="file" class="form-control" id="idDocument" name="idDocument" required>
+                                                                <input type="text" class="form-control" id="ownerName" name="ownerName" required>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="passport">Recent passport (150px by 150px)
+                                                                <label for="vehiclePhoto">Photos of the Vehicle
                                                                     <span class="text-danger">*</span></label>
-                                                                <input type="file" class="form-control" id="passport" name="passport" required>
+                                                                <input type="file" class="form-control" id="vehiclePhoto" name="vehiclePhoto" required>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="row">
+
                                                     <div class="col-md-12">
                                                         <div class="mb-3">
                                                             <div class="form-group">
-                                                                <label for="name">About Me <span
-                                                                        class="text-danger">*</span></label>
-                                                                <textarea name="aboutme" id="aboutme" rows="5" class="form-control" placeholder="e.g Consent to Background Check, Criminal Record (if applicable), Reference Contacts (for verification)" required></textarea>
+                                                                <label for="status">Documents
+                                                                    <span class="text-danger">*</span></label>
+                                                                <textarea class="form-control" rows="12" name="vehicleDocs" id="" required placeholder="Upload scanned copies of important documents (e.g., registration papers, insurance certificate)"></textarea>
+
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <h5>Account Information</h5>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">Username<span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="username" name="username" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">Password <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="password" class="form-control" id="password" name="password" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
                                                 <div class="row">
                                                     <div class="col-md-12 mt-3">
-                                                        <button name="RegisterDriver" class="btn btn-primary btn-block col-12 btn-lg"> Create
-                                                            Driver Account</button>
+                                                        <button name="RegisterVehicle" class="btn btn-primary btn-block col-12 btn-lg"> Add New
+                                                            Vehicle</button>
                                                     </div>
                                                 </div>
                                             </div>
