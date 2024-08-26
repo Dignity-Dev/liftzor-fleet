@@ -311,12 +311,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                                <h4 class="mb-sm-0">Vehicle category</h4>
+                                <h4 class="mb-sm-0">Account Management</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Vehicle</a></li>
-                                        <li class="breadcrumb-item active">Vehicle category</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Account</a></li>
+                                        <li class="breadcrumb-item active">Account Management</li>
                                     </ol>
                                 </div>
 
@@ -331,7 +331,7 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Vehicle Category</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">Account Creation</h4>
                                     <div class="flex-shrink-0">
                                         <button class="btn btn-primary" onclick="window.history.back()"><i
                                                 class="ri-arrow-go-back-fill"></i> Back</button>
@@ -341,18 +341,31 @@
                                     <form action="" method="POST" autocomplete="off">
                                         <div class="mb-3">
                                             <div class="form-group">
-                                                <label for="vehicle_category">Category Name</label>
-                                                <input type="text" class="form-control" id="vehicle_category" name="vehicle_category" placeholder="e.g., Motorcycle, Van, Truck, Bicycle" required>
+                                                <label for="fullname">Fullname</label>
+                                                <input type="text" class="form-control" id="fullname" name="fullname" required>
                                             </div>
                                         </div>
                                         <div class="mb-3">
                                             <div class="form-group">
-                                                <label for="vehicle_category">Vehicle Features</label>
-                                                <input type="text" class="form-control" id="vehicle_category" name="vehicle_category" placeholder="e.g., refrigeration, GPS tracking, etc.">
+                                                <label for="email">Email</label>
+                                                <input type="text" class="form-control" id="email" name="email" required>
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <button class="btn btn-primary btn-block col-12" name="createVehicleCategory">Create New Category</button>
+                                            <div class="form-group">
+                                                <label for="phone_no">Phone Number</label>
+                                                <input type="text" class="form-control" id="phone_no" name="phone_no" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" class="form-control" id="password" name="password" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <button class="btn btn-primary btn-block col-12" name="createVehicleCategory">Create User Account</button>
                                         </div>
 
                                     </form>
@@ -362,7 +375,7 @@
                         <div class="col-lg-8">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Vehicle Category Management</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">User Account Management</h4>
                                     <div class="flex-shrink-0">
                                         <button class="btn btn-primary" onclick="window.history.back()"><i
                                                 class="ri-arrow-go-back-fill"></i> Back</button>
@@ -373,18 +386,20 @@
                                         <thead>
                                             <tr>
                                                 <th>SN</th>
-                                                <th>Category Code</th>
-                                                <th>Category Name</th>
-                                                <th>Features</th>
+                                                <th>Fullname</th>
+                                                <th>Email</th>
+                                                <th>phone</th>
+                                                <th>Date Join</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1.</td>
-                                                <td>VCT-001</td>
-                                                <td>VAN</td>
-                                                <td>Short Distance</td>
+                                                <td>Sola Oluwapelumi</td>
+                                                <td>oluwasola5678@gmail.com</td>
+                                                <td>+2349086789543</td>
+                                                <td>Aug 12, 2024</td>
                                                 <td>
                                                     <a id="sa-warning" class="text-danger">
                                                         <i class="ri-delete-bin-fill align-bottom me-2 text-danger"></i> Delete
