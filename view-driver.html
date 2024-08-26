@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>New Vehicle | Liftzor - Fleet</title>
+    <title>View Driver | Liftzor - Fleet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Liftzor Fleet" name="description" />
     <meta content="DDevs" name="author" />
@@ -293,12 +293,6 @@
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
 
-
-
-
-
-
-
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
@@ -306,221 +300,176 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                                <h4 class="mb-sm-0">New Vehicle</h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Vehicle</a></li>
-                                        <li class="breadcrumb-item active">New Vehicle</li>
-                                    </ol>
-                                </div>
-
-                            </div>
+                    <div class="profile-foreground position-relative mx-n4 mt-n4">
+                        <div class="profile-wid-bg">
+                            <img src="assets/images/profile-bg.jpg" alt="" class="profile-wid-img" />
                         </div>
                     </div>
-                    <!-- end page title -->
+                    <div class="pt-4 mb-4 mb-lg-3 pb-lg-4 profile-wrapper">
+                        <div class="row g-4">
+                            <div class="col-auto">
+                                <div class="avatar-lg">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col">
+                                <div class="p-2">
+                                    <h3 class="text-white mb-1">Sola Olatunde</h3>
+                                    <p class="text-white text-opacity-75">Driver</p>
+                                    <div class="hstack text-white-50 gap-1">
+                                        <div class="me-2"><i class="ri-map-pin-user-line me-1 text-white text-opacity-75 fs-16 align-middle"></i>No. 5 Lane 45, Obalende Street Lagos</div>
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">New Driver Account</h4>
-                                    <div class="flex-shrink-0">
-                                        <button class="btn btn-primary" onclick="window.history.back()"><i
-                                                class="ri-arrow-go-back-fill"></i> Back</button>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h5>Personal Information</h5>
-                                                <div class="row">
-                                                    <div class="mb-3">
-                                                        <div class="form-group">
-                                                            <label for="name">Fullname <span
-                                                                    class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" id="name" name="fullname" required>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="email">Email <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="email" class="form-control" id="email" name="email" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="phone">Phone No <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="phone" name="phone" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="phone">Address (Residential) <span
-                                                                        class="text-danger">*</span></label> <textarea class="form-control" name="address" id="address" rows="5"></textarea>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <h5>Emergency Contact Information (Name, Relationship, Phone Number)
-                                                </h5>
-                                                <div class="row">
-                                                    <div class="mb-3">
-                                                        <div class="form-group">
-                                                            <label for="emergency_fullname">Fullname <span
-                                                                    class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" id="emergency_fullname" name="emergency_fullname" required>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="relationship">Relationship <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="relationship" name="relationship" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="emmergence_phone">Phone No <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="emmergence_phone" name="emmergence_phone" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-md-6">
-                                                <h5>Identity Verification:</h5>
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">Government-Issued ID <span
-                                                                        class="text-danger">*</span></label>
-                                                                <select class="form-control" name="kyc_id" id="kyc_id" required>
-                                                                    <option value="">SELECT</option>
-                                                                    <option value="NIN">NIN (National Identification
-                                                                        No.)</option>
-                                                                    <option value="PVC">PVC (Voter's Card)</option>
-                                                                    <option value="driver">Driving Licence</option>
-                                                                    <option value="intPassport">International Passport
-                                                                    </option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">ID Number <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="idNumber" name="idNumber" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">ID Expiry Date <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="date" class="form-control" id="idExpire" name="idExpire" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="idDocument">Upload a clear copy of ID
-                                                                    <span class="text-danger">*</span></label>
-                                                                <input type="file" class="form-control" id="idDocument" name="idDocument" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="passport">Recent passport (150px by 150px)
-                                                                    <span class="text-danger">*</span></label>
-                                                                <input type="file" class="form-control" id="passport" name="passport" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">About Me <span
-                                                                        class="text-danger">*</span></label>
-                                                                <textarea name="aboutme" id="aboutme" rows="5" class="form-control" placeholder="e.g Consent to Background Check, Criminal Record (if applicable), Reference Contacts (for verification)" required></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <h5>Account Information</h5>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">Username<span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="text" class="form-control" id="username" name="username" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <div class="form-group">
-                                                                <label for="name">Password <span
-                                                                        class="text-danger">*</span></label>
-                                                                <input type="password" class="form-control" id="password" name="password" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12 mt-3">
-                                                        <button name="RegisterDriver" class="btn btn-primary btn-block col-12 btn-lg"> Create
-                                                            Driver Account</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
                             </div>
+                            <!--end col-->
+                            <div class="col-12 col-lg-auto order-last order-lg-0">
+                                <!-- <div class="row text text-white-50 text-center">
+                                    <div class="col-lg-6 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-white mb-1">24.3K</h4>
+                                            <p class="fs-14 mb-0">Followers</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-white mb-1">1.3K</h4>
+                                            <p class="fs-14 mb-0">Following</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <!--end col-->
+
                         </div>
+                        <!--end row-->
                     </div>
 
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div>
+                                <div class="d-flex profile-wrapper">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-pills animation-nav profile-nav gap-2 gap-lg-3 flex-grow-1" role="tablist">
+                                        <li class="nav-item">
+                                            <button class="btn btn-success" onclick="window.history.back()">
+                                                <i class="ri-arrow-go-back-fill"></i> Back </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link fs-14 active" data-bs-toggle="tab" href="#overview-tab" role="tab">
+                                                <i class="ri-airplay-fill d-inline-block d-md-none"></i> <span class="d-none d-md-inline-block">Overview</span>
+                                            </a>
+                                        </li>
 
+                                    </ul>
+                                    <div class="flex-shrink-0">
+                                        <a href="update-driver.html" class="btn btn-success"><i
+                                                class="ri-edit-box-line align-bottom"></i> Edit Profile</a>
+                                    </div>
+                                </div>
+                                <!-- Tab panes -->
+                                <div class="tab-content pt-4 text-muted">
+                                    <div class="tab-pane active" id="overview-tab" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-xxl-3">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-3">Info</h5>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-borderless mb-0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Full Name :</th>
+                                                                        <td class="text-muted">Sola Olatunde</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Mobile :</th>
+                                                                        <td class="text-muted">+234809877554</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">E-mail :</th>
+                                                                        <td class="text-muted">solaolatunde@gmail.com
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Location :</th>
+                                                                        <td class="text-muted">No. 5 Lane 34 Obaleden street Lagos
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="ps-0" scope="row">Joining Date</th>
+                                                                        <td class="text-muted">24 Jul 2024</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end card body -->
+                                                </div>
+                                                <!-- end card -->
 
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-xxl-9">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-3">About</h5>
+                                                        <p>Hi I'm Sola Olatunde, It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told
+                                                            me what Occidental is European languages are members of the same family.</p>
+                                                        <p>You always want to make sure that your fonts work well together and try to limit the number of fonts you use to three or less. Experiment and play around with the fonts that you already have in the
+                                                            software you’re working with reputable font websites. This may be the most commonly encountered tip I received from the designers I spoke with. They highly encourage that you use different fonts
+                                                            in one design, but do not over-exaggerate and go overboard.
+                                                        </p>
+                                                        <div class="row">
+                                                            <div class="col-6 col-md-4">
+                                                                <div class="d-flex mt-4">
+                                                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
+                                                                        <div class="avatar-title bg-light rounded-circle fs-16 text-primary material-shadow">
+                                                                            <i class="ri-user-2-fill"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-grow-1 overflow-hidden">
+                                                                        <p class="mb-1">KYC Verification:</p>
+                                                                        <h6 class="text-truncate mb-0">NIN: 699784433334
+                                                                        </h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-6 col-md-4">
+                                                                <div class="d-flex mt-4">
+                                                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
+                                                                        <div class="avatar-title bg-light rounded-circle fs-16 text-primary material-shadow">
+                                                                            <i class="ri-user-line"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex-grow-1 overflow-hidden">
+                                                                        <p class="mb-1">Website :</p>
+                                                                        <a href="#" class="fw-semibold">www.Liftzor.com</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                        </div>
+                                                        <!--end row-->
+                                                    </div>
+                                                    <!--end card-body-->
+                                                </div>
+                                                <!-- end card -->
+                                            </div>
+                                            <!--end col-->
+                                        </div>
+                                        <!--end row-->
+                                    </div>
+
+                                </div>
+                                <!--end tab-content-->
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
 
                 </div>
                 <!-- container-fluid -->
@@ -545,6 +494,10 @@
             </footer>
         </div>
         <!-- end main content-->
+
+
+
+
 
 
 
