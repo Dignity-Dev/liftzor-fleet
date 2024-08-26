@@ -98,13 +98,13 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <h6 class="dropdown-header">Welcome Opeyemi!</h6>
-                                <a class="dropdown-item" href="user-profile.html"><i
+                                <a class="dropdown-item" href="#"><i
                                         class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Profile</span></a>
 
                                 <div class="dropdown-divider"></div>
 
-                                <a class="dropdown-item" href="profile-settings.html"><span
+                                <a class="dropdown-item" href="#"><span
                                         class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
                                         class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Settings</span></a>
@@ -272,7 +272,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="settings.html">
+                            <a class="nav-link menu-link" href="#">
                                 <i class="ri-settings-3-line"></i> <span data-key="t-setting">Settings</span>
                             </a>
                         </li>
@@ -311,12 +311,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                                <h4 class="mb-sm-0">Manage Vehicle</h4>
+                                <h4 class="mb-sm-0">All New Order</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Vehicle</a></li>
-                                        <li class="breadcrumb-item active">Manage Vehicle</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Orders</a></li>
+                                        <li class="breadcrumb-item active">New Orders</li>
                                     </ol>
                                 </div>
 
@@ -331,7 +331,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Vehicle Management</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">New Orders</h4>
                                     <div class="flex-shrink-0">
                                         <button class="btn btn-primary" onclick="window.history.back()"><i
                                                 class="ri-arrow-go-back-fill"></i> Back</button>
@@ -341,14 +341,14 @@
                                     <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Vehicle No</th>
-                                                <th>Vehicle Name</th>
-                                                <th>VIN</th>
-                                                <th>Plate No</th>
-                                                <th>Reg State</th>
-                                                <th>Cargo Capacity</th>
+                                                <th>S/N</th>
+                                                <th>Order ID</th>
+                                                <th>Customer</th>
                                                 <th>Status</th>
+                                                <th>Pickup</th>
+                                                <th>Delivery</th>
+                                                <th>Weight</th>
+                                                <th>Date</th>
                                                 <th>Assigned Status</th>
                                                 <th>Action</th>
                                             </tr>
@@ -356,13 +356,13 @@
                                         <tbody>
                                             <tr>
                                                 <td>1.</td>
-                                                <td>VNO-232</td>
-                                                <td>Toyota Hilux</td>
-                                                <td>DCF-345FG-GB</td>
-                                                <td>AAA-2345-SD</td>
-                                                <td>Lagos/Nigeria</td>
-                                                <td>700KG</td>
-                                                <td><span class="badge bg-info">Active</span></td>
+                                                <td>ORD-098</td>
+                                                <td>Olunloyo Ridwan</td>
+                                                <td><span class="badge bg-danger">Waiting for a Driver</span></td>
+                                                <td><i class="ri-navigation-fill"></i> Obalende, Lagos</td>
+                                                <td><i class="ri-map-pin-fill"></i> Ikeja, Lagos</td>
+                                                <td>300KG</td>
+                                                <td>23 Aug. 2024</td>
                                                 <td><span class="badge bg-danger">Not Assigned</span></td>
                                                 <td>
                                                     <div class="dropdown d-inline-block">
@@ -370,26 +370,73 @@
                                                             <i class="ri-more-fill align-middle"></i>
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-end">
-                                                            <li><a href="assigned-vehicle.html" class="dropdown-item"><i
+                                                            <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#zoomInModal"><i
+                                                                class="ri-ship-line align-bottom me-2 text-muted"></i>
+                                                            Assign Order
+                                                        </button>
+
+                                                            <li><a href="view-order.html" class="dropdown-item"><i
                                                                         class="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                    Assign</a></li>
-                                                            <li><a href="view-vehicle.html" class="dropdown-item"><i
-                                                                        class="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                    View</a></li>
-                                                            <li><a href="update-vehicle.html" class="dropdown-item edit-item-btn"><i
-                                                                        class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                                                    Edit</a></li>
-                                                            <li>
-                                                                <button id="sa-warning" class="dropdown-item remove-item-btn">
-                                                                    <i
-                                                                        class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                                                    Delete
-                                                                </button>
-                                                            </li>
+                                                                    View Order</a></li>
                                                         </ul>
                                                     </div>
                                                 </td>
                                             </tr>
+
+
+
+                                            <!-- Modal Blur -->
+                                            <div id="zoomInModal" class="modal fade zoomIn" tabindex="-1" aria-labelledby="zoomInModalLabel" aria-hidden="true" style="display: none;">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="zoomInModalLabel">Assign Order
+                                                            </h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="col-md-5">
+                                                                    <p><b>Order No:</b> VNO-232</p>
+                                                                    <p><b>Customer Name:</b> Olunloyo Mujeeb</p>
+                                                                    <p><b>Location: </b> <i class="ri-navigation-fill"></i> Obalende, Lagos. | <i class="ri-map-pin-fill"></i> Ikeja, Lagos</p>
+                                                                    <p><b>Weight:</b> 300KG</p>
+                                                                </div>
+                                                                <div class="col-md-7">
+                                                                    <img src="assets/images/pakage.jpg" alt="" width="100%">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <h5>Assign Order to:</h5>
+                                                                <form action="" method="POST">
+
+                                                                    <div class="mb-3">
+                                                                        <div class="form-group">
+                                                                            <label for="rider_id" class="form-label">Rider ID</label>
+                                                                            <input type="text" class="form-control" id="rider_id" name="rider_id" placeholder="RID-234" required>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="mb-3">
+                                                                            <button type="button" class="btn btn-primary btn-lg ">Assign  Order</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <!-- /.modal -->
+
 
                                         </tbody>
                                     </table>

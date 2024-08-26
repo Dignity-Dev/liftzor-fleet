@@ -98,13 +98,13 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <h6 class="dropdown-header">Welcome Opeyemi!</h6>
-                                <a class="dropdown-item" href="user-profile.html"><i
+                                <a class="dropdown-item" href="#"><i
                                         class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Profile</span></a>
 
                                 <div class="dropdown-divider"></div>
 
-                                <a class="dropdown-item" href="profile-settings.html"><span
+                                <a class="dropdown-item" href="#"><span
                                         class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
                                         class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle">Settings</span></a>
@@ -272,7 +272,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="settings.html">
+                            <a class="nav-link menu-link" href="#">
                                 <i class="ri-settings-3-line"></i> <span data-key="t-setting">Settings</span>
                             </a>
                         </li>
@@ -311,12 +311,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                                <h4 class="mb-sm-0">Manage Vehicle</h4>
+                                <h4 class="mb-sm-0">Manage Customer</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Vehicle</a></li>
-                                        <li class="breadcrumb-item active">Manage Vehicle</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Customer</a></li>
+                                        <li class="breadcrumb-item active">Manage Customer</li>
                                     </ol>
                                 </div>
 
@@ -331,7 +331,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Vehicle Management</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">Customer Management</h4>
                                     <div class="flex-shrink-0">
                                         <button class="btn btn-primary" onclick="window.history.back()"><i
                                                 class="ri-arrow-go-back-fill"></i> Back</button>
@@ -341,42 +341,43 @@
                                     <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Vehicle No</th>
-                                                <th>Vehicle Name</th>
-                                                <th>VIN</th>
-                                                <th>Plate No</th>
-                                                <th>Reg State</th>
-                                                <th>Cargo Capacity</th>
+                                                <th>SN</th>
+                                                <th>Customer ID</th>
+                                                <th>Customer</th>
+                                                <th>Email</th>
+                                                <th>Phone No</th>
+                                                <th>Date Join</th>
                                                 <th>Status</th>
-                                                <th>Assigned Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1.</td>
-                                                <td>VNO-232</td>
-                                                <td>Toyota Hilux</td>
-                                                <td>DCF-345FG-GB</td>
-                                                <td>AAA-2345-SD</td>
-                                                <td>Lagos/Nigeria</td>
-                                                <td>700KG</td>
+                                                <td>CUS-122</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0 me-2">
+                                                            <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle material-shadow" />
+                                                        </div>
+                                                        <div class="flex-grow-1">Olorunpoto Samuel</div>
+                                                    </div>
+                                                </td>
+                                                <td>samuel2343@gmail.com</td>
+                                                <td>+2348143556677</td>
+                                                <td>12 Jun 2024</td>
                                                 <td><span class="badge bg-info">Active</span></td>
-                                                <td><span class="badge bg-danger">Not Assigned</span></td>
                                                 <td>
                                                     <div class="dropdown d-inline-block">
                                                         <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i class="ri-more-fill align-middle"></i>
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-end">
-                                                            <li><a href="assigned-vehicle.html" class="dropdown-item"><i
-                                                                class="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                            Assign</a></li>
-                                                            <li><a href="view-vehicle.html" class="dropdown-item"><i
+
+                                                            <li><a href="view-customer.html" class="dropdown-item"><i
                                                                         class="ri-eye-fill align-bottom me-2 text-muted"></i>
                                                                     View</a></li>
-                                                            <li><a href="update-vehicle.html" class="dropdown-item edit-item-btn"><i
+                                                            <li><a href="update-customer.html" class="dropdown-item edit-item-btn"><i
                                                                         class="ri-pencil-fill align-bottom me-2 text-muted"></i>
                                                                     Edit</a></li>
                                                             <li>
