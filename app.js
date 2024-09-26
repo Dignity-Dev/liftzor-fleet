@@ -32,13 +32,18 @@ app.get('/', (req, res) => {
     res.render('fleet/sign-in', { error: null });
 });
 
+// Homepage page
+app.get('/dashboard', (req, res) => {
+    res.render('fleet/dashboard', { error: null });
+});
+
 
 // Routes
 const authRoutes = require('./routes/auth');
 // const fleetRoutes = require('./routes/fleet');
 
 // Use Routes
-app.use('/auth', authRoutes);
+app.use('/', authRoutes);
 // app.use('/fleet', fleetRoutes);
 
 

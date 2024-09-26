@@ -25,47 +25,50 @@ router.get('/sign-in', (req, res) => {
 });
 
 // Register page
-router.get('/register', (req, res) => {
-    res.render('fleet/register', { error: null });
+router.get('/sign-up', (req, res) => {
+    res.render('fleet/regme', { error: null });
 });
 
-// Login handler (No bcrypt)
-router.post('/login', async(req, res) => {
-    const { user, password } = req.body;
+
+// In your auth route
+router.post('/sign-in', async(req, res) => {
     try {
-        const response = await axios.post(`${process.env.APP_URI}/user/login`, { user, password });
+        // Authentication logic
+        const response = await axios.post(`${process.env.APP_URI}/fleet/login`, req.body);
         const users = response.data;
 
-        // Generate JWT token
-        const token = jwt.sign({ id: users.id, email: users.emailAddress }, process.env.SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
-
-        // Set the token in cookies
+        // On successful login
+        const token = jwt.sign({ id: users.user }, process.env.SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
         res.cookie('token', token, { httpOnly: true });
-
-        // Redirect to dashboard with success message
-        res.render('fleet/sign-in', { success: 'Login successful!' });
+        console.log(token);
+        // Pass success message to EJS
+        res.render('fleet/sign-in', { success: 'Login successful!', error: null });
     } catch (error) {
-        // Send error message to frontend if login fails
-        res.render('fleet/sign-in', { error: 'Invalid credentials, please try again!' });
+        // Handle the error in the route, not in the EJS
+        res.render('fleet/sign-in', { success: null, error: 'Login failed. Please check your credentials!' });
     }
 });
 
 
+
+
+
 // Register handler (No bcrypt)
-router.post('/register', async(req, res) => {
-    const { email, password, name } = req.body;
+router.post('/sign-up', async(req, res) => {
     try {
-        await axios.post(`${process.env.APP_URI}/admin/customers`, { email, password, name });
-        res.redirect('/auth/login');
+        const response = await axios.post(`${process.env.APP_URI}/fleet/register`, req.body);
+        res.render('fleet/sign-in', { success: 'Registration successful!', error: null });
     } catch (error) {
-        res.render('auth/register', { error: 'Error registering user' });
+        res.render('fleet/regme', { success: null, error: 'Registration failed. Please check your credentials!' });
     }
 });
 
 // Logout
 router.get('/logout', (req, res) => {
     res.clearCookie('token');
-    res.redirect('/auth/login');
+    res.redirect('/sign-in');
+    console.log(token);
 });
+
 
 module.exports = router;

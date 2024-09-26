@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Sign In | Liftzor - Fleet Dash</title>
+    <title>Sign UP | Liftzor - Fleet Dash</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Liftzor Fleet Dash" name="description" />
     <meta content="DDevs" name="author" />
@@ -83,15 +83,26 @@
                                     <div class="p-lg-5 p-4">
                                         <div>
                                             <h5 class="text-primary">Welcome Back !</h5>
-                                            <p class="text-muted">Sign in to continue to Liftzor.</p>
+                                            <p class="text-muted">Sign Up to have account on Liftzor.</p>
                                         </div>
 
                                         <div class="mt-4">
-                                            <form method="POST" action="/sign-in">
-
+                                            <form method="POST" action="/sign-up">
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label">Fleet Name</label>
+                                                    <input type="text" name="fleetName" class="form-control" placeholder="Enter fleet Name" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label">Fullname</label>
+                                                    <input type="text" name="fullName" class="form-control" placeholder="Enter fullName" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label">Phone Number</label>
+                                                    <input type="text" name="phoneNumber" class="form-control" placeholder="Enter phone Number" required>
+                                                </div>
                                                 <div class="mb-3">
                                                     <label for="email" class="form-label">Enter Email</label>
-                                                    <input type="text" name="user" class="form-control" id="email" placeholder="Enter email" required>
+                                                    <input type="email" name="emailAddress" class="form-control" id="email" placeholder="Enter email Address" required>
                                                 </div>
 
                                                 <div class="mb-3">
@@ -105,12 +116,13 @@
 
 
                                                 <div class="mt-4">
-                                                    <button class="btn btn-success w-100" name="login">Sign In</button>
+                                                    <button class="btn btn-success w-100" name="signup">Sign Up</button>
                                                 </div>
 
 
                                             </form>
                                         </div>
+
 
                                     </div>
                                 </div>
@@ -139,7 +151,7 @@
                     showConfirmButton: false,
                     timer: 1500
                 }).then(() => {
-                    window.location.href = '/dashboard'; // Redirect after successful login
+                    window.location.href = '/sign-in'; //
                 });
             </script>
             <% } %>
@@ -152,7 +164,7 @@
                             title: 'Oops...',
                             text: '<%= error %>',
                         }).then(() => {
-                            window.location.href = '/sign-in';
+                            window.location.href = '/sign-up';
                         });
                     </script>
                     <% } %>
