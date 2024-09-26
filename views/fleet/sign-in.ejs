@@ -22,6 +22,9 @@
     <!-- custom Css-->
     <link href="/css/custom.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- Include SweetAlert from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -83,11 +86,11 @@
                                         </div>
 
                                         <div class="mt-4">
-                                            <form action="#">
+                                            <form method="post" action="/sign-in">
 
                                                 <div class="mb-3">
                                                     <label for="email" class="form-label">Enter Email</label>
-                                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" required>
+                                                    <input type="text" name="user" class="form-control" id="email" placeholder="Enter email" required>
                                                 </div>
 
                                                 <div class="mb-3">
@@ -125,6 +128,33 @@
             <!-- end container -->
         </div>
         <!-- end auth page content -->
+
+
+
+
+
+        <script>
+            // Check for error or success messages passed from server
+            <% if (error) { %>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '<%= error %>',
+            });
+            <% } %>
+
+            <% if (success) { %>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '<%= success %>',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                window.location.href = '/dashboard'; // Redirect after successful login
+            });
+            <% } %>
+        </script>
 
         <!-- footer -->
         <footer class="footer galaxy-border-none">

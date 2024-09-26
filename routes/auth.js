@@ -1,11 +1,26 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
+const jwt = require('jsonwebtoken');
 
-
+// Middleware to protect routes
+const authenticateJWT = (req, res, next) => {
+    const token = req.cookies.token;
+    if (token) {
+        jwt.verify(token, process.env.SECRET, (err, user) => {
+            if (err) {
+                return res.status(403).send('Unauthorized');
+            }
+            req.user = user;
+            next();
+        });
+    } else {
+        res.status(403).send('Unauthorized');
+    }
+};
 
 // Login page
-router.get('/login', (req, res) => {
+router.get('/sign-in', (req, res) => {
     res.render('fleet/sign-in', { error: null });
 });
 
@@ -14,19 +29,29 @@ router.get('/register', (req, res) => {
     res.render('fleet/register', { error: null });
 });
 
-// Login handler
+// Login handler (No bcrypt)
 router.post('/login', async(req, res) => {
-    const { email, password } = req.body;
+    const { user, password } = req.body;
     try {
-        const response = await axios.post(`${process.env.APP_URI}/user/login`, { email, password });
-        req.session.user = response.data;
-        res.redirect('fleet/dashboard');
+        const response = await axios.post(`${process.env.APP_URI}/user/login`, { user, password });
+        const users = response.data;
+
+        // Generate JWT token
+        const token = jwt.sign({ id: users.id, email: users.emailAddress }, process.env.SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
+
+        // Set the token in cookies
+        res.cookie('token', token, { httpOnly: true });
+
+        // Redirect to dashboard with success message
+        res.render('fleet/sign-in', { success: 'Login successful!' });
     } catch (error) {
-        res.render('fleet/sign-in', { error: 'Invalid credentials' });
+        // Send error message to frontend if login fails
+        res.render('fleet/sign-in', { error: 'Invalid credentials, please try again!' });
     }
 });
 
-// Register handler
+
+// Register handler (No bcrypt)
 router.post('/register', async(req, res) => {
     const { email, password, name } = req.body;
     try {
@@ -39,7 +64,7 @@ router.post('/register', async(req, res) => {
 
 // Logout
 router.get('/logout', (req, res) => {
-    req.session.destroy();
+    res.clearCookie('token');
     res.redirect('/auth/login');
 });
 

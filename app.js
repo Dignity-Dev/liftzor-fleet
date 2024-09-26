@@ -32,9 +32,6 @@ app.get('/', (req, res) => {
     res.render('fleet/sign-in', { error: null });
 });
 
-app.get('/dashboard', (req, res) => {
-    res.render('fleet/dashboard', { error: null });
-});
 
 // Routes
 const authRoutes = require('./routes/auth');
@@ -43,6 +40,18 @@ const authRoutes = require('./routes/auth');
 // Use Routes
 app.use('/auth', authRoutes);
 // app.use('/fleet', fleetRoutes);
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Server listening
 const PORT = process.env.PORT || 3000;
