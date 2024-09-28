@@ -1,31 +1,60 @@
-// Get all drivers
-router.get('/drivers', verifyJWT, async(req, res) => {
+// fetch all
+router.get('/drivers', isAuthenticated, async(req, res) => {
     try {
-        const response = await fetch(`${APP_URI}/drivers`, {
+        const response = await axios.get(`${process.env.APP_URI}/drivers`, {
             headers: {
-                'Authorization': `Bearer ${req.headers['authorization']}`
+                Authorization: `Bearer ${req.cookies.token}`
             }
         });
-        const drivers = await response.json();
-        res.render('admin/drivers', { drivers });
+        const drivers = response.data;
+        res.render('drivers/index', { drivers });
     } catch (error) {
-        res.status(500).send('Error fetching drivers');
+        res.render('error', { message: 'Error fetching drivers.' });
     }
 });
 
-// Create driver
-router.post('/drivers', verifyJWT, async(req, res) => {
+// create new
+router.post('/drivers', isAuthenticated, async(req, res) => {
     try {
-        const response = await fetch(`${APP_URI}/drivers`, {
-            method: 'POST',
+        await axios.post(`${process.env.APP_URI}/drivers`, req.body, {
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${req.headers['authorization']}`
-            },
-            body: JSON.stringify(req.body)
+                Authorization: `Bearer ${req.cookies.token}`
+            }
         });
-        res.redirect('/admin/drivers');
+        res.redirect('/drivers');
     } catch (error) {
-        res.status(500).send('Error creating driver');
+        res.render('error', { message: 'Error creating driver.' });
     }
 });
+
+// update
+
+router.put('/drivers/:id', isAuthenticated, async(req, res) => {
+    try {
+        await axios.put(`${process.env.APP_URI}/drivers/${req.params.id}`, req.body, {
+            headers: {
+                Authorization: `Bearer ${req.cookies.token}`
+            }
+        });
+        res.redirect(`/drivers`);
+    } catch (error) {
+        res.render('error', { message: 'Error updating driver.' });
+    }
+});
+
+
+// delete
+router.delete('/drivers/:id', isAuthenticated, async(req, res) => {
+    try {
+        await axios.delete(`${process.env.APP_URI}/drivers/${req.params.id}`, {
+            headers: {
+                Authorization: `Bearer ${req.cookies.token}`
+            }
+        });
+        res.redirect('/drivers');
+    } catch (error) {
+        res.render('error', { message: 'Error deleting driver.' });
+    }
+});
+
+//

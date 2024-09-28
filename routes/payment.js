@@ -1,14 +1,14 @@
 // Get all payments
-router.get('/payments', verifyJWT, async(req, res) => {
+router.get('/payments', isAuthenticated, async(req, res) => {
     try {
-        const response = await fetch(`${APP_URI}/payments`, {
+        const response = await axios.get(`${process.env.APP_URI}/payments`, {
             headers: {
-                'Authorization': `Bearer ${req.headers['authorization']}`
+                Authorization: `Bearer ${req.cookies.token}`
             }
         });
-        const payments = await response.json();
-        res.render('admin/payments', { payments });
+        const payments = response.data;
+        res.render('payments/index', { payments });
     } catch (error) {
-        res.status(500).send('Error fetching payments');
+        res.render('error', { message: 'Error fetching payments.' });
     }
 });

@@ -19,9 +19,16 @@ const authenticateJWT = (req, res, next) => {
     }
 };
 
-// Login page
+// Redirect to dashboard if user is already logged in
 router.get('/sign-in', (req, res) => {
-    res.render('fleet/sign-in', { error: null });
+    const token = req.cookies.token;
+    if (token) {
+        // If token exists, redirect to dashboard
+        return res.redirect('/dashboard');
+    }
+
+    // If not logged in, render the login page
+    res.render('fleet/sign-in', { success: null, error: null });
 });
 
 // Register page
@@ -48,8 +55,6 @@ router.post('/sign-in', async(req, res) => {
         res.render('fleet/sign-in', { success: null, error: 'Login failed. Please check your credentials!' });
     }
 });
-
-
 
 
 

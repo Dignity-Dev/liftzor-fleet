@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 
 // Homepage page
 app.get('/', (req, res) => {
-    res.render('fleet/sign-in', { error: null });
+    res.redirect('/sign-in');
 });
 
 // Homepage page
@@ -38,13 +38,14 @@ app.get('/dashboard', (req, res) => {
 });
 
 
-// Routes
+// Middleware and Routes
 const authRoutes = require('./routes/auth');
-// const fleetRoutes = require('./routes/fleet');
+const dashboardRoutes = require('./routes/dashboard');
+
 
 // Use Routes
 app.use('/', authRoutes);
-// app.use('/fleet', fleetRoutes);
+app.use('/', dashboardRoutes);
 
 
 
