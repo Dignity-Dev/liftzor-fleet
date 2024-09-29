@@ -12,6 +12,7 @@ const isAuthenticated = (req, res, next) => {
     try {
         // Verify the token
         jwt.verify(token, process.env.SECRET);
+        req.user = user; // You may want to store user info here
         next(); // Proceed to the next middleware or route handler
     } catch (error) {
         // If token is invalid or expired, redirect to login

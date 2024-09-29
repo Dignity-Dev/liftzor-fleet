@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const jwt = require('jsonwebtoken');
 
 // Load environment variables
 dotenv.config();
@@ -33,9 +34,9 @@ app.get('/', (req, res) => {
 });
 
 // Homepage page
-app.get('/dashboard', (req, res) => {
-    res.render('fleet/dashboard', { error: null });
-});
+// app.get('/dashboard', (req, res) => {
+//     res.render('fleet/dashboard', { error: null });
+// });
 
 
 // Middleware and Routes
