@@ -1,3 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const axios = require('axios');
+const jwt = require('jsonwebtoken');
+
+
+// Middleware to authenticate and protect routes
+const isAuthenticated = require('../middleware/auth'); // Your custom auth middleware
 // ftch all
 router.get('/vehicles', isAuthenticated, async(req, res) => {
     try {

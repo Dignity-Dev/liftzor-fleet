@@ -3,22 +3,26 @@ const router = express.Router();
 const axios = require('axios');
 const jwt = require('jsonwebtoken');
 
+
+// Middleware to authenticate and protect routes
+const isAuthenticated = require('../middleware/auth'); // Your custom auth middleware
 // Middleware to protect routes
-const authenticateJWT = (req, res, next) => {
-    const token = req.cookies.token;
-    console.log('Token:', token);
-    if (token) {
-        jwt.verify(token, process.env.SECRET, (err, user) => {
-            if (err) {
-                return res.status(403).send('Unauthorized');
-            }
-            req.user = user;
-            next();
-        });
-    } else {
-        res.status(403).send('Unauthorized');
-    }
-};
+// const authenticateJWT = (req, res, next) => {
+//     const token = req.cookies.token;
+//     console.log('Token:', token);
+//     if (token) {
+//         jwt.verify(token, process.env.SECRET, (err, user) => {
+//             if (err) {
+//                 return res.status(403).send('Unauthorized');
+//             }
+//             req.user = user;
+//             next();
+//         });
+//     } else {
+//         res.status(403).send('Unauthorized');
+//     }
+// };
+
 
 // Redirect to dashboard if user is already logged in
 router.get('/sign-in', (req, res) => {
@@ -84,5 +88,4 @@ router.get('/logout', (req, res) => {
     console.log('User logged out');
 });
 
-module.exports = router;
 module.exports = router;
