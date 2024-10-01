@@ -27,9 +27,11 @@ const isAuthenticated = require('../middleware/auth'); // Your custom auth middl
 // Redirect to dashboard if user is already logged in
 router.get('/sign-in', (req, res) => {
     const token = req.cookies.token;
+    const redirectPath = req.query.redirect || '/dashboard'; // Dynamic path, defaults to '/dashboard'
+
     if (token) {
-        // If token exists, redirect to dashboard
-        return res.redirect('/dashboard');
+        // If token exists, redirect to the specified page
+        return res.redirect(redirectPath);
     }
 
     // If not logged in, render the login page
