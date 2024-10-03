@@ -32,74 +32,84 @@
                                 class="ri-arrow-go-back-fill"></i> Back</button>
                     </div>
                 </div>
-                <div class="card-body  table-responsive">
-                    <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>SN</th>
-                                <th>Customer ID</th>
-                                <th>Customer</th>
-                                <th>Email</th>
-                                <th>Phone No</th>
-                                <th>Date Join</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>CUS-122</td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 me-2">
-                                            <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle material-shadow" />
-                                        </div>
-                                        <div class="flex-grow-1">Olorunpoto Samuel</div>
-                                    </div>
-                                </td>
-                                <td>samuel2343@gmail.com</td>
-                                <td>+2348143556677</td>
-                                <td>12 Jun 2024</td>
-                                <td><span class="badge bg-info">Active</span></td>
-                                <td>
-                                    <div class="dropdown d-inline-block">
-                                        <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="container mt-5">
+
+                    <h1 class="mb-4">Customer List</h1>
+                    <% if (error) { %>
+                        <p class="text-danger mb-4">Error:
+                            <%= error %>
+                        </p>
+                        <!-- Use Bootstrap class for red text -->
+                        <% }else{ %>
+                            <div class="card-body  table-responsive">
+                                <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>SN</th>
+                                            <th>Customer ID</th>
+                                            <th>Customer</th>
+                                            <th>Email</th>
+                                            <th>Phone No</th>
+                                            <th>Date Join</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>CUS-122</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0 me-2">
+                                                        <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle material-shadow" />
+                                                    </div>
+                                                    <div class="flex-grow-1">Olorunpoto Samuel</div>
+                                                </div>
+                                            </td>
+                                            <td>samuel2343@gmail.com</td>
+                                            <td>+2348143556677</td>
+                                            <td>12 Jun 2024</td>
+                                            <td><span class="badge bg-info">Active</span></td>
+                                            <td>
+                                                <div class="dropdown d-inline-block">
+                                                    <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="ri-more-fill align-middle"></i>
                                         </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
+                                                    <ul class="dropdown-menu dropdown-menu-end">
 
-                                            <li><a href="/customer/:id" class="dropdown-item"><i
+                                                        <li><a href="/customer/:id" class="dropdown-item"><i
                                                         class="ri-eye-fill align-bottom me-2 text-muted"></i>
                                                     View</a></li>
-                                            <li><a href="/update-customer/:id" class="dropdown-item edit-item-btn"><i
+                                                        <li><a href="/update-customer/:id" class="dropdown-item edit-item-btn"><i
                                                         class="ri-pencil-fill align-bottom me-2 text-muted"></i>
                                                     Edit</a></li>
-                                            <li>
-                                                <button id="sa-warning" class="dropdown-item remove-item-btn">
+                                                        <li>
+                                                            <button id="sa-warning" class="dropdown-item remove-item-btn">
                                                     <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete
                                                 </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-                        </tbody>
-                    </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <% } %>
+                                </ </div>
                 </div>
+                <!--end col-->
             </div>
+            <!--end row-->
+
+
+
+
+
+
+
         </div>
-        <!--end col-->
-    </div>
-    <!--end row-->
 
-
-
-
-
-
-
-</div>
-
-<!-- container-fluid -->
+        <!-- container-fluid -->

@@ -15,6 +15,8 @@
                     </ol>
                 </div>
 
+
+
             </div>
         </div>
     </div>
@@ -32,73 +34,94 @@
                                 class="ri-arrow-go-back-fill"></i> Back</button>
                     </div>
                 </div>
-                <div class="card-body  table-responsive">
-                    <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Driver No</th>
-                                <th>Fullname</th>
-                                <th>Phone No</th>
-                                <th>Email</th>
-                                <th>Username</th>
-                                <th>ID Number</th>
-                                <th>KYC Status</th>
-                                <th>Vehicle ID</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>VLZ-452</td>
-                                <td>Adewale Olatunde</td>
-                                <td><a href="tel:+234817655004">+234817655004</a></td>
-                                <td>
-                                    <a href="mailto:Adewaleola23@gmail.com">Adewaleola23@gmail.com</a>
-                                </td>
-                                <td>walexx</td>
-                                <td>NIN: 894455332322</td>
-                                <td><span class="badge bg-info-subtle text-success">Active</span></td>
-                                <td>NA</td>
-                                <td><span class="badge bg-info">Active</span></td>
-                                <td>
-                                    <div class="dropdown d-inline-block">
-                                        <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                <!-- Display error message if it exists -->
+                <div class="container mt-5">
+
+                    <h1 class="mb-4">Driver List</h1>
+                    <% if (error) { %>
+                        <p class="text-danger mb-4">Error:
+                            <%= error %>
+                        </p>
+                        <!-- Use Bootstrap class for red text -->
+                        <% }else{ %>
+                            <!-- end of error message if it exists -->
+
+                            <div class="card-body  table-responsive">
+                                <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Driver No</th>
+                                            <th>Fullname</th>
+                                            <th>Phone No</th>
+                                            <th>Email</th>
+                                            <th>Username</th>
+                                            <th>ID Number</th>
+                                            <th>KYC Status</th>
+                                            <th>Vehicle ID</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% if (drivers && drivers.length > 0) { %>
+                                            <% drivers.forEach(driver => { %>
+                                                <tr>
+                                                    <td>1.</td>
+                                                    <td>VLZ-452</td>
+                                                    <td>
+                                                        <%= driver.fullName %>
+                                                    </td>
+                                                    <td><a href="tel:+234817655004">+234817655004</a></td>
+                                                    <td>
+                                                        <a href="mailto:Adewaleola23@gmail.com">Adewaleola23@gmail.com</a>
+                                                    </td>
+                                                    <td>walexx</td>
+                                                    <td>NIN: 894455332322</td>
+                                                    <td><span class="badge bg-info-subtle text-success">Active</span></td>
+                                                    <td>NA</td>
+                                                    <td><span class="badge bg-info">Active</span></td>
+                                                    <td>
+                                                        <div class="dropdown d-inline-block">
+                                                            <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="ri-more-fill align-middle"></i>
                                         </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a href="/driver/:id" class="dropdown-item"><i
+                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                <li><a href="/driver/:id" class="dropdown-item"><i
                                                         class="ri-eye-fill align-bottom me-2 text-muted"></i>
                                                     View</a></li>
-                                            <li><a href="/update-driver/:id" class="dropdown-item edit-item-btn"><i
+                                                                <li><a href="/update-driver/:id" class="dropdown-item edit-item-btn"><i
                                                         class="ri-pencil-fill align-bottom me-2 text-muted"></i>
                                                     Edit</a></li>
-                                            <li>
-                                                <button id="sa-warning" class="dropdown-item remove-item-btn">
+                                                                <li>
+                                                                    <button id="sa-warning" class="dropdown-item remove-item-btn">
                                                     <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete
                                                 </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <% }) %>
+                                                    <% }  %>
 
-                        </tbody>
-                    </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <% }%>
+
                 </div>
             </div>
+            <!--end col-->
         </div>
-        <!--end col-->
+        <!--end row-->
+
+
+
+
+
+
+
     </div>
-    <!--end row-->
-
-
-
-
-
-
-
-</div>
-<!-- container-fluid -->
+    <!-- container-fluid -->

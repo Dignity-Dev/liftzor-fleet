@@ -3,34 +3,23 @@ const router = express.Router();
 const axios = require('axios');
 const jwt = require('jsonwebtoken');
 
-
 // Middleware to authenticate and protect routes
-const isAuthenticated = require('../middleware/auth'); // Your custom auth middleware
-// Middleware to protect routes
-// const authenticateJWT = (req, res, next) => {
-//     const token = req.cookies.token;
-//     console.log('Token:', token);
-//     if (token) {
-//         jwt.verify(token, process.env.SECRET, (err, user) => {
-//             if (err) {
-//                 return res.status(403).send('Unauthorized');
-//             }
-//             req.user = user;
-//             next();
-//         });
-//     } else {
-//         res.status(403).send('Unauthorized');
-//     }
-// };
+const isAuthenticated = require('../utils/middleware/auth'); // Your custom auth middleware
 
+// Check if token is expired
+const isTokenExpired = (token) => {
+    if (!token) return true; // If there's no token, it's considered expired
+    const decoded = jwt.decode(token); // Decode the token to check its expiration
+    return decoded.exp * 1000 < Date.now(); // Check if the expiration time has passed
+};
 
 // Redirect to dashboard if user is already logged in
 router.get('/sign-in', (req, res) => {
     const token = req.cookies.token;
     const redirectPath = req.query.redirect || '/dashboard'; // Dynamic path, defaults to '/dashboard'
 
-    if (token) {
-        // If token exists, redirect to the specified page
+    if (token && !isTokenExpired(token)) {
+        // If token exists and is not expired, redirect to the specified page
         return res.redirect(redirectPath);
     }
 
@@ -47,31 +36,33 @@ router.get('/sign-up', (req, res) => {
 router.post('/sign-in', async(req, res) => {
     try {
         // Authentication logic
-        const response = await axios.post(`${process.env.APP_URI}/fleet/login`, req.body);
+        const response = await axios.post(`${process.env.APP_URI}/user/login`, req.body);
         const users = response.data;
+
         // On successful login, generate token
-        // const token = jwt.sign({ id: users.user }, process.env.SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
         const token = jwt.sign({
-            id: users.user, // Assuming this is the user ID
-            fullName: users.fullName, // Assuming this is the user's full name
-            emailAddress: users.emailAddress, // User's email
-            passport: users.passport // Assuming this is the user's profile image
+            id: users.userID,
+            fullName: users.fullName,
+            emailAddress: users.emailAddress,
+            passport: users.passport
         }, process.env.SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
-        res.cookie('token', token, { httpOnly: true });
-        console.log(token);
 
-        // Store some user info in cookies or session (non-sensitive info)
-        res.cookie('fullName', users.fullName, { httpOnly: false });
-        res.cookie('userEmail', users.emailAddress, { httpOnly: false });
+        // Store token in a httpOnly cookie for security
+        res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 24 * 60 * 60 * 1000 }); // 1 day expiry
 
+        // Store non-sensitive user info in regular cookies
+        res.cookie('id', users.id, { httpOnly: false, maxAge: 24 * 60 * 60 * 1000 });
+        res.cookie('fullName', users.fullName, { httpOnly: false, maxAge: 24 * 60 * 60 * 1000 });
+        res.cookie('userEmail', users.emailAddress, { httpOnly: false, maxAge: 24 * 60 * 60 * 1000 });
 
-        // Redirect to dashboard with user data
+        // Redirect to dashboard after login
         res.redirect('/dashboard');
     } catch (error) {
-        // Handle the error, possibly from invalid credentials
+        console.error(error);
         res.render('fleet/sign-in', { success: null, error: 'Login failed. Please check your credentials!' });
     }
 });
+
 
 // Handle Registration
 router.post('/sign-up', async(req, res) => {
@@ -89,5 +80,8 @@ router.get('/logout', (req, res) => {
     res.redirect('/sign-in');
     console.log('User logged out');
 });
+
+// Middleware to check token expiration before accessing protected routes
+router.use(isAuthenticated); // Use your existing authentication middleware here
 
 module.exports = router;
