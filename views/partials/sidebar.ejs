@@ -1,0 +1,163 @@
+<!-- ========== App Menu ========== -->
+<div class="app-menu navbar-menu">
+    <!-- LOGO -->
+    <div class="navbar-brand-box">
+        <!-- Dark Logo-->
+        <a href="/dashboard" class="logo logo-dark">
+            <span class="logo-sm">
+            <img src="/images/logo-sm.png" alt="" height="22">
+        </span>
+            <span class="logo-lg">
+            <img src="/images/logo-dark.png" alt="" height="30">
+        </span>
+        </a>
+        <!-- Light Logo-->
+        <a href="/dashboard" class="logo logo-light">
+            <span class="logo-sm">
+            <img src="/images/logo-sm.png" alt="" height="22">
+        </span>
+            <span class="logo-lg">
+            <img src="/images/logo-light.png" alt="" height="30">
+        </span>
+        </a>
+        <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+        <i class="ri-record-circle-line"></i>
+    </button>
+    </div>
+
+    <div id="scrollbar">
+        <div class="container-fluid">
+            <div id="two-column-menu">
+            </div>
+
+            <ul class="navbar-nav" id="navbar-nav">
+                <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="dashboard">
+                        <i class="ri-home-3-line"></i> <span data-key="t-dashboard">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-title"><span data-key="t-menu">Apps</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarDrivers" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDrivers">
+                        <i class="ri-team-line"></i> <span data-key="t-driver">Driver Management</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarDrivers">
+                        <ul class="nav nav-sm flex-column">
+                            <!-- <li class="nav-item">
+                                <a href="new-driver" class="nav-link" data-key="t-newDriver"> Create New Driver </a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a href="manage-driver" class="nav-link" data-key="t-manageDriver"> Manage Drivers </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarVehicles" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarVehicles">
+                        <i class="ri-takeaway-line"></i> <span data-key="t-vehicle">Vehicle Management</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarVehicles">
+                        <ul class="nav nav-sm flex-column">
+                            <!-- <li class="nav-item">
+                                <a href="vehicle-category" class="nav-link" data-key="t-vehicle-category"> Vehicle Category </a>
+                            </li> -->
+                            <!-- <li class="nav-item">
+                                <a href="new-vehicle" class="nav-link" data-key="t-newVehicle"> Create New Vehicle </a>
+                            </li>
+                            <li class="nav-item"> -->
+                            <a href="manage-vehicle" class="nav-link" data-key="t-manageVehicle"> Manage Vehicle </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="assigned-vehicle" class="nav-link" data-key="t-assignVehicle"> Assign Vehicle </a>
+                </li> -->
+                </ul>
+                </div>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarOrders" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarOrders">
+                        <i class="ri-pin-distance-line"></i> <span data-key="t-order">Order Management</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarOrders">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="new-order" class="nav-link" data-key="t-newOrder"> New Orders </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="manage-order" class="nav-link" data-key="t-manageOrder"> Manage Orders </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu-title"><span data-key="t-menu">Customers</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarCustomers" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCustomers">
+                        <i class="ri-user-6-line"></i> <span data-key="t-customer">Customer Management</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarCustomers">
+                        <ul class="nav nav-sm flex-column">
+
+                            <li class="nav-item">
+                                <a href="manage-customer" class="nav-link" data-key="t-manageCustomer"> Manage Customers </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu-title"><span data-key="t-menu">Payment</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarPayments" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPayments">
+                        <i class="ri-funds-line"></i> <span data-key="t-payment">Payment Management</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarPayments">
+                        <ul class="nav nav-sm flex-column">
+
+                            <li class="nav-item">
+                                <a href="manage-payment" class="nav-link" data-key="t-managePayment"> Manage Payments </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="menu-title"><span data-key="t-menu">Account</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarAccounts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAccounts">
+                        <i class="ri-user-line"></i> <span data-key="t-account">User Account</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarAccounts">
+                        <ul class="nav nav-sm flex-column">
+
+                            <li class="nav-item">
+                                <a href="manage-account" class="nav-link" data-key="t-manageAccount"> Manage Payments </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#">
+                        <i class="ri-settings-3-line"></i> <span data-key="t-setting">Settings</span>
+                    </a>
+                </li>
+
+                <li class="menu-title"><span data-key="t-menu">Other</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="/logout">
+                        <i class="ri-logout-box-line"></i> <span data-key="t-logout">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>
+<!-- Left Sidebar End -->
+
+<!-- Vertical Overlay-->
+<div class="vertical-overlay"></div>
