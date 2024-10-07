@@ -1,0 +1,125 @@
+<!-- container-fluid -->
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                <h4 class="mb-sm-0">Manage Orders</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Orders</a></li>
+                        <li class="breadcrumb-item active">Manage Orders</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">Manage Orders</h4>
+                    <div class="flex-shrink-0">
+                        <button class="btn btn-primary" onclick="window.history.back()"><i
+                                class="ri-arrow-go-back-fill"></i> Back</button>
+                    </div>
+                </div>
+
+                <div class="card-body table-responsive">
+                    <% if (error) { %>
+                        <p class="text-danger mb-4">
+                            <%= error %>
+                        </p>
+                        <% } else { %>
+                            <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>S/N</th>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Receiver Phone Number</th>
+                                        <th>Receiver Name</th>
+                                        <th>Driver Status</th>
+                                        <th>Pickup</th>
+                                        <th>Delivery</th>
+                                        <th>Distance</th>
+                                        <th>Driver Vehicle Type</th>
+                                        <th>Weight</th>
+                                        <th>Date</th>
+                                        <th>Order Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (orders && orders.length > 0) { %>
+                                        <% orders.forEach((order, index) => { %>
+                                            <tr>
+                                                <td>
+                                                    <%= index + 1 %>
+                                                </td>
+                                                <td>
+                                                    <%= order.orderID %>
+                                                </td>
+                                                <td>
+                                                    <%= order.receiverFullName %>
+                                                </td>
+                                                <td>
+                                                    <%= order.receiverPhoneNumber %>
+                                                </td>
+                                                <td>
+                                                    <%= order.receiverFullName %>
+                                                </td>
+                                                <td><span class="badge bg-danger"> <%= order.driverOrderStatus %></span></td>
+                                                <td><i class="ri-navigation-fill"></i>
+                                                    <%= order.pickup %>
+                                                </td>
+                                                <td><i class="ri-map-pin-fill"></i>
+                                                    <%= order.destination %>
+                                                </td>
+                                                <td>
+                                                    <%= order.distance %>
+                                                </td>
+                                                <td>
+                                                    <%= order.vehicleType %>
+                                                </td>
+                                                <td>
+                                                    <%= order.weight %>
+                                                </td>
+                                                <td>
+                                                    <%= new Date(order.createdAt).toLocaleDateString('en-US', {
+                                                    year: 'numeric', 
+                                                    month: 'long', 
+                                                    day: 'numeric'
+                                                }) %>
+                                                </td>
+                                                <td><span class="badge bg-danger"> <%= order.status %></span></td>
+                                                <td>
+                                                    <div class="dropdown d-inline-block">
+                                                        <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="ri-more-fill align-middle"></i>
+                                                    </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end">
+                                                            <li><a href="/order/<%= order.orderID %>" class="dropdown-item"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View Order</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <% }) %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+
+</div>
+<!-- container-fluid -->
