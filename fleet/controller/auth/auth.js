@@ -36,7 +36,7 @@ exports.signin = async(req, res) => {
         });
 
         // Redirect to the dashboard
-        return res.redirect('fleet/dashboard');
+        return res.redirect('/fleet/dashboard');
 
     } catch (error) {
         console.error('Error:', error.response ? error.response.data : error.message);
@@ -55,11 +55,10 @@ exports.signin = async(req, res) => {
 // Logout Route
 exports.signOut = (req, res) => {
     res.clearCookie('token');
-    res.redirect('fleet/sign-in');
+    res.redirect('/fleet/sign-in');
     console.log('User logged out');
 };
 
-// Handle Sign-up
 // exports.signup = async(req, res) => {
 //     try {
 //         // Send POST request to the signup API

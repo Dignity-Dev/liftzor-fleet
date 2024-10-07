@@ -41,7 +41,6 @@ app.use('/', customerRoutes);
 app.use('/', orderRoutes);
 app.use('/', fleetoutes);
 app.use('/', vehicleRoutes);
-
 // end of admin route
 
 // start of fleet route
@@ -69,7 +68,7 @@ const errorHandler = require('./utils/middleware/errorHandler');
 app.use(errorHandler);
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
