@@ -33,20 +33,18 @@
                 </div>
 
                 <!-- Display error message if it exists -->
-                <div class="container mt-5">
 
-                    <h1 class="mb-4">Driver List</h1>
+                <!-- end of error message if it exists -->
 
-                    <!-- end of error message if it exists -->
-
-                    <div class="card-body  table-responsive">
-                        <% if (error) { %>
-                            <p class="text-danger mb-4">
-                                <%= error %>
-                            </p>
-                            <!-- Use Bootstrap class for red text -->
-                            <% }else{ %>
-                                <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
+                <div class="card-body">
+                    <% if (error) { %>
+                        <p class="text-danger mb-4">
+                            <%= error %>
+                        </p>
+                        <!-- Use Bootstrap class for red text -->
+                        <% }else{ %>
+                            <div class="table-responsive">
+                                <table id="myTable" class="table table-bordered dt-responsive nowrap table-striped align-middle" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -137,10 +135,11 @@
 
                                     </tbody>
                                 </table>
-                    </div>
-                    <% }%>
 
+                            </div>
                 </div>
+                <% }%>
+
             </div>
             <!--end col-->
         </div>

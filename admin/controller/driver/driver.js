@@ -1,41 +1,6 @@
 const axios = require('axios');
 
-// Fetch all drivers from API
-// exports.getAllDrivers = async(req, res) => {
-//     try {
-//         // Retrieve the JWT token from cookies or headers
-//         const token = req.cookies.token; // Assuming the token is stored in cookies
 
-//         // If there's no token, redirect to the sign-in page
-//         if (!token) {
-//             return res.redirect('/sign-in'); // Redirect to login if token is missing
-//         }
-
-//         // Make the API call to get all drivers, passing the token in the Authorization header
-//         const response = await axios.get(`${process.env.APP_URI}/admin/drivers`, {
-//             headers: {
-//                 Authorization: `Bearer ${token}` // Pass the token in the headers
-//             }
-//         });
-
-//         const drivers = response.data;
-
-//         // Render the drivers page with the fetched data
-//         res.render('admin/driver/driver', { drivers, error: null });
-//     } catch (error) {
-//         console.error('Error fetching drivers:', error);
-
-//         // Handle different types of errors
-//         if (error.response && error.response.status === 401) {
-//             // If the token is invalid or expired, redirect to sign-in page
-//             return res.redirect('/sign-in');
-//         }
-
-//         // Render the page with an error message in case of other errors
-//         res.render('admin/driver/driver', { drivers: [], error: 'Error fetching drivers.' });
-//     }
-// };
-// Controller to fetch and render all drivers
 
 
 // Render form to create a new driver

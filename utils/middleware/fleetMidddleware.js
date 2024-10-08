@@ -18,6 +18,7 @@ const authorize = (req, res, next) => {
 
         if (decodedToken.userType !== 'fleet') {
             // console.log('Access denied due to insufficient permissions');
+            res.redirect("/sign-in");
             return res.status(403).json({ message: 'Access denied: Insufficient permissions' });
         }
 

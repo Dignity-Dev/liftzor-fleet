@@ -4,9 +4,11 @@ const jwt = require('jsonwebtoken');
 
 // Handle Sign-up
 // Fleet controller (signUpFleet)
+// Fleet controller (signUpFleet)
 exports.signUpFleet = async(req, res) => {
     // Check if the logged-in user is an admin
     if (req.user.userType !== 'admin') {
+        res.redirect("/sign-in");
         return res.status(403).json({
             success: false,
             message: 'Access denied: You are not allowed',
@@ -14,8 +16,14 @@ exports.signUpFleet = async(req, res) => {
     }
 
     try {
+        // Extract token from request headers
+        const token = req.cookies.token;
         // Make a request to register the fleet
-        const response = await axios.post(`${process.env.APP_URI}/fleet/register`, req.body);
+        const response = await axios.post(`${process.env.APP_URI}/fleet/register`, req.body, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
 
         // After successful fleet registration, redirect to the dashboard
         return res.redirect('/manage-fleet');
@@ -31,6 +39,7 @@ exports.signUpFleet = async(req, res) => {
         });
     }
 };
+
 
 
 

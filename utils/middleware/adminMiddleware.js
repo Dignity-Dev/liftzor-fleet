@@ -8,7 +8,6 @@ const authorize = (req, res, next) => {
             res.redirect("/sign-in");
             return res.status(401).json({ message: 'Authorization token is missing' });
         }
-
         // Log the JWT secret for debugging purposes
         // console.log('JWT Secret in middleware:', process.env.SECRET);
 
@@ -18,6 +17,7 @@ const authorize = (req, res, next) => {
 
         if (decodedToken.userType !== 'admin') {
             // console.log('Access denied due to insufficient permissions');
+            res.redirect("/sign-in");
             return res.status(403).json({ message: 'Access denied: Insufficient permissions' });
         }
 

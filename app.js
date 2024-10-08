@@ -43,23 +43,6 @@ app.use('/', fleetoutes);
 app.use('/', vehicleRoutes);
 // end of admin route
 
-// start of fleet route
-// Import Routes
-const fleetauthRoutes = require('./fleet/routes/auth/auth');
-const fleetdashboardRoutes = require('./fleet/routes/dashboard');
-const fleetdriverRoutes = require('./fleet/routes/driver/driver');
-const fleetcustomerRoutes = require('./fleet/routes/customer/customer');
-const fleetorderRoutes = require('./fleet/routes/order/order');
-const fleetvehicleRoutes = require('./fleet/routes/vehicle/vehicle');
-
-
-// Use Routes
-app.use('/fleet', fleetauthRoutes);
-app.use('/fleet', fleetdashboardRoutes);
-app.use('/fleet', fleetdriverRoutes);
-app.use('/fleet', fleetcustomerRoutes);
-app.use('/fleet', fleetorderRoutes);
-app.use('/fleet', fleetvehicleRoutes);
 
 // end of fleet routes
 

@@ -5,6 +5,7 @@ const authController = require('../../controller/auth/auth');
 
 // Routes
 // Render the signin page
+router.get('/', authController.renderSignIn);
 router.get('/sign-in', authController.renderSignIn);
 
 // Handle the login
